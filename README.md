@@ -1,2 +1,2 @@
 # LudumDare51
-Game jam project for Ludum Dare 51.
+Game jam project for [Ludum Dare 51](https://ldjam.com/events/ludum-dare/51).
