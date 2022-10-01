@@ -12,8 +12,8 @@ on:
     branches:
       - main
     paths:
-      - 'API/**'
-      - '!API/LudumDare51.Leaderboard'
+      - 'API/LudumDare51.API'
+      - 'API/LudumDare51.API.Models'
       - '!Unity/**'
   workflow_dispatch:
 

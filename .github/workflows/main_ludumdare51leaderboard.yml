@@ -12,8 +12,7 @@ on:
     branches:
       - main
     paths:
-      - 'API/**'
-      - '!API/LudumDare51.API'
+      - 'API/LudumDare51.Leaderboard'
       - '!Unity/**'
   workflow_dispatch:
 
@@ -61,7 +60,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'ludumdare51api'
+          app-name: 'ludumdare51leaderboard'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EF0BB04691704522ACCF5C54E325DF1D }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_a5de0dee5c3041e5b5fa72097f79c457 }}
           package: .
