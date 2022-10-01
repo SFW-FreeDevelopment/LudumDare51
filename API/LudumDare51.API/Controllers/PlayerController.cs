@@ -13,14 +13,14 @@ namespace LudumDare51.API.Controllers
             return Ok();
         }
         
-        [HttpGet]
-        public IActionResult Get(string id)
+        [HttpGet("{id}")]
+        public IActionResult Get([FromRoute] string id)
         {
             return Ok();
         }
 
         [HttpPost]
-        public IActionResult Create(PlayerCreateRequest request)
+        public IActionResult Create([FromBody] PlayerCreateRequest request)
         {
             return Created(new Uri(""),null);
         }
