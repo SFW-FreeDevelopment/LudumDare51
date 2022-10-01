@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using Cinemachine;
 using UnityEngine;
 
@@ -24,7 +21,7 @@ namespace LD51.Unity
 
         public void ShakeCamera(float intensity, float time)
         {
-            CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
+            var cinemachineBasicMultiChannelPerlin =
                 cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
             cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;

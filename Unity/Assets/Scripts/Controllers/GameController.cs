@@ -6,6 +6,8 @@ namespace LD51.Unity.Controllers
 {
     public class GameController : MonoBehaviour
     {
+        private const float TimeBetweenWaves = 10;
+        
         [SerializeField] private Spawner[] _spawners;
         
         public static GameController Instance { get; private set; }
