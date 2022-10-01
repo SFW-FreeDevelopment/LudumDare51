@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudumDare51.API", "LudumDare51.API\LudumDare51.API.csproj", "{61384BB5-3311-43CD-89A7-0A2A9113D7D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudumDare51.Models", "LudumDare51.Models\LudumDare51.Models.csproj", "{BF4D89B6-08D1-4B8E-95FB-D671E5FF8B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudumDare51.API.Models", "LudumDare51.API.Models\LudumDare51.API.Models.csproj", "{E83A4D34-BB49-4715-A57C-106252B8BE7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61384BB5-3311-43CD-89A7-0A2A9113D7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61384BB5-3311-43CD-89A7-0A2A9113D7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61384BB5-3311-43CD-89A7-0A2A9113D7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61384BB5-3311-43CD-89A7-0A2A9113D7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4D89B6-08D1-4B8E-95FB-D671E5FF8B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4D89B6-08D1-4B8E-95FB-D671E5FF8B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4D89B6-08D1-4B8E-95FB-D671E5FF8B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4D89B6-08D1-4B8E-95FB-D671E5FF8B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83A4D34-BB49-4715-A57C-106252B8BE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83A4D34-BB49-4715-A57C-106252B8BE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83A4D34-BB49-4715-A57C-106252B8BE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83A4D34-BB49-4715-A57C-106252B8BE7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

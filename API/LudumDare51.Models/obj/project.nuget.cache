@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GxakJqv+lPLGhPDzNfXXcpav3qtHTQvpadHqQ+FcrMLwTDXDvI7YlVx0sbB3vltz21uVJJnOPtodM2aqHnOfoA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Steven\\Repos\\LudumDare51\\API\\LudumDare51.Models\\LudumDare51.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Steven\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Steven\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
