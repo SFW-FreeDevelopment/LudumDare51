@@ -4,7 +4,7 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - ludumdare51api
 
 env:
-  AZURE_WEBAPP_NAME: MY_WEBAPP_NAME   # set this to your application's name
+  AZURE_WEBAPP_NAME: LudumDare51API   # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: './API/LudumDare51.API'      # set this to the path to your web app project, defaults to the repository root
   DOTNET_VERSION: '5'  
 
@@ -29,6 +29,7 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
+        working-directory: src/API/LudumDare51.API
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
