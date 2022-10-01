@@ -1,10 +1,13 @@
 ﻿using System.Collections;
+using LD51.Unity.Scene;
 using UnityEngine;
 
 namespace LD51.Unity.Controllers
 {
     public class GameController : MonoBehaviour
     {
+        [SerializeField] private Spawner[] _spawners;
+        
         public static GameController Instance { get; private set; }
         public int TimeElapsed { get; private set; } = 0;
         public bool IsGameOver { get; private set; } = false;
