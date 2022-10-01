@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1488c01c-8a87-4044-95a1-fa30bd92bc68" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../API/LudumDare51.API.Models/BaseResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../API/LudumDare51.API.Models/BaseResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/LudumDare51.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../API/LudumDare51.API/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +16,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FW2Ixw2KOH9TjCLDv6i1EGPVgg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -70,7 +73,7 @@
       <updated>1664593445575</updated>
       <workItem from="1664593445811" duration="7000" />
       <workItem from="1664597343799" duration="1322000" />
-      <workItem from="1664634050211" duration="368000" />
+      <workItem from="1664634050211" duration="3875000" />
     </task>
     <servers />
   </component>
