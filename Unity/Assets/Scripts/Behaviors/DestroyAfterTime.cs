@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Behaviors
+namespace LD51.Unity.Behaviors
 {
     public class DestroyAfterTime : MonoBehaviour
     {
