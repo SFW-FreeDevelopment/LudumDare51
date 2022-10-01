@@ -12,7 +12,8 @@ on:
     branches:
       - main
     paths:
-      - API/*
+      - 'API/**'
+      - '!Unity/**'
   workflow_dispatch:
 
 jobs:
