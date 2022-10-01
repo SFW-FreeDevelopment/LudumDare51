@@ -1,6 +1,7 @@
-﻿namespace LudumDare51.Models;
-
-public class Player
+﻿namespace LudumDare51.Models
 {
-    
+    public class Player
+    {
+        
+    }
 }
