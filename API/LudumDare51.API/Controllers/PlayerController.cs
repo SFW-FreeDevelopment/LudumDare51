@@ -31,7 +31,7 @@ namespace LudumDare51.API.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest, null)]
         public async Task<IActionResult> Create([FromBody] PlayerCreateRequest request)
         {
-            return Created(new Uri("Url for get by id"),null);
+            return Created(new Uri("Url-for-get-by-id"),null);
         }
     }
 }
