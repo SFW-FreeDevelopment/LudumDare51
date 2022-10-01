@@ -1,5 +1,0 @@
-C:\Users\Steven\Repos\LudumDare51\API\LudumDare51.Models\obj\Debug\netstandard2.0\LudumDare51.Models.csproj.AssemblyReference.cache
-C:\Users\Steven\Repos\LudumDare51\API\LudumDare51.Models\obj\Debug\netstandard2.0\LudumDare51.Models.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Steven\Repos\LudumDare51\API\LudumDare51.Models\obj\Debug\netstandard2.0\LudumDare51.Models.AssemblyInfoInputs.cache
-C:\Users\Steven\Repos\LudumDare51\API\LudumDare51.Models\obj\Debug\netstandard2.0\LudumDare51.Models.AssemblyInfo.cs
-C:\Users\Steven\Repos\LudumDare51\API\LudumDare51.Models\obj\Debug\netstandard2.0\LudumDare51.Models.csproj.CoreCompileInputs.cache
