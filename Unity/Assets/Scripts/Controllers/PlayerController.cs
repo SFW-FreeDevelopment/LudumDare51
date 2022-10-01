@@ -1,3 +1,4 @@
+using System;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,7 +17,8 @@ namespace LD51.Unity.Controllers
 
         [SerializeField] private float _movementForce = 10.0f;
         private Rigidbody2D _rigidbody2D;
-        private bool _isMoving = false;
+        private float horizontal, vertical;
+        private float moveLimiter = 0.7f;
         
         private void Awake()
         {
@@ -25,30 +27,8 @@ namespace LD51.Unity.Controllers
         
         private void Update()
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            {
-                _rigidbody2D.AddForce(Vector2.left * Time.deltaTime * _movementForce, ForceMode2D.Impulse);
-                _isMoving = true;
-            }
-            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                _rigidbody2D.AddForce(Vector2.right * Time.deltaTime * _movementForce, ForceMode2D.Impulse);
-                _isMoving = true;
-            }
-            else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            {
-                _rigidbody2D.AddForce(Vector2.up * Time.deltaTime * _movementForce, ForceMode2D.Impulse);
-                _isMoving = true;
-            }
-            else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-                _rigidbody2D.AddForce(Vector2.down * Time.deltaTime * _movementForce, ForceMode2D.Impulse);
-                _isMoving = true;
-            }
-            else
-            {
-                _isMoving = false;
-            }
+            horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
+            vertical = Input.GetAxisRaw("Vertical"); // -1 is down
             
             if (Input.GetMouseButton(0) && NextShotAvailable)
             {
@@ -59,26 +39,19 @@ namespace LD51.Unity.Controllers
                 var bulletVector = (Reticle.transform.position - transform.position).normalized * 25;
                 Instantiate(BulletPrefab, transform.position, Quaternion.identity)
                     .GetComponent<Rigidbody2D>().AddForce(bulletVector, ForceMode2D.Impulse);
-                
             }
-        
-        
-            return;
-            // TODO: Get current mouse position to determine target position
-            Vector2 mouse = new Vector2(Input.mousePosition.x,Input.mousePosition.y);
-            Ray ray;
-            ray = Camera.main.ScreenPointToRay(mouse);
-            RaycastHit hit;
-         
-            if(Physics.Raycast(ray,out hit, 10))
+        }
+
+        private void FixedUpdate()
+        {
+            if (horizontal != 0 && vertical != 0) // Check for diagonal movement
             {
-                Reticle.transform.position = hit.point;
-            
-                if(hit.point.x < transform.position.x)
-                    Debug.Log("Left");
-                else
-                    Debug.Log("Right");
-            }
+                // limit movement speed diagonally, so you move at 70% speed
+                horizontal *= moveLimiter;
+                vertical *= moveLimiter;
+            } 
+
+            _rigidbody2D.velocity = new Vector2(horizontal * _movementForce, vertical * _movementForce);
         }
     }
 }
