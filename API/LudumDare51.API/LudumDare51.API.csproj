@@ -2,13 +2,17 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\LudumDare51.API.Models\LudumDare51.API.Models.csproj" />
       <ProjectReference Include="..\LudumDare51.Models\LudumDare51.Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MongoDB.Driver" Version="2.17.1" />
     </ItemGroup>
 
 </Project>
