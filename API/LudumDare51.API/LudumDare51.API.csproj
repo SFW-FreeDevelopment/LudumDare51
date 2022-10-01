@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\LudumDare51.API.Models\LudumDare51.API.Models.csproj" />
       <ProjectReference Include="..\LudumDare51.Models\LudumDare51.Models.csproj" />
     </ItemGroup>
 
