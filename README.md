@@ -1,8 +1,6 @@
 # LudumDare51
 Game jam project for [Ludum Dare 51 - "Every 10 seconds"](https://ldjam.com/events/ludum-dare/51).
 
----
-
 ## Members
 - [@StevenGarberg](https://github.com/StevenGarberg) | Development
 - [@takhomasac](https://github.com/takhomasac) | Graphics
