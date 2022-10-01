@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace LD51.Unity.Controllers
@@ -52,9 +54,12 @@ namespace LD51.Unity.Controllers
             {
                 _nextShotAvailableAt = Time.time + IntervalBetweenShots;
 
+                CinemachineShake.Instance.ShakeCamera(5f, .1f);
+                
                 var bulletVector = (Reticle.transform.position - transform.position).normalized * 25;
                 Instantiate(BulletPrefab, transform.position, Quaternion.identity)
                     .GetComponent<Rigidbody2D>().AddForce(bulletVector, ForceMode2D.Impulse);
+                
             }
         
         
