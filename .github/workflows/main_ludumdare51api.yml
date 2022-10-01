@@ -1,10 +1,10 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - ludumdare51api
+name: Build and deploy LudumDare51.API to Azure Web App - ludumdare51api
 
 env:
-  AZURE_WEBAPP_NAME: LudumDare51API   # set this to your application's name
+  AZURE_WEBAPP_NAME: LudumDare51.API   # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: './API/LudumDare51.API'      # set this to the path to your web app project, defaults to the repository root
 
 on:
@@ -13,6 +13,7 @@ on:
       - main
     paths:
       - 'API/**'
+      - '!API/LudumDare51.Leaderboard'
       - '!Unity/**'
   workflow_dispatch:
 
