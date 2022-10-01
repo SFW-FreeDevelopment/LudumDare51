@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1488c01c-8a87-4044-95a1-fa30bd92bc68" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CrosshairCursor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CrosshairCursor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CrosshairCursor.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CrosshairCursor.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviors/DestroyAfterTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviors/DestroyAfterTime.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair108.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair108.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
