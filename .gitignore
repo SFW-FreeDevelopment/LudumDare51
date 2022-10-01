@@ -397,8 +397,9 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Misc
-API/LudumDare51.API
+# Custom
+.idea/
 API/.idea
-API/LudumDare51.API.Models
-API/LudumDare51.Models
+API/LudumDare51.API/obj
+API/LudumDare51.API.Models/obj
+API/LudumDare51.Models/obj
