@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Managers
+namespace LD51.Unity.Managers
 {
     public class ObjectPool : MonoBehaviour
     {
