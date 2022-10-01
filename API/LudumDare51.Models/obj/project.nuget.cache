@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "GxakJqv+lPLGhPDzNfXXcpav3qtHTQvpadHqQ+FcrMLwTDXDvI7YlVx0sbB3vltz21uVJJnOPtodM2aqHnOfoA==",
+  "dgSpecHash": "6MFv2W4efg+wXHsQERGooT/dkFzM8j76z+cwDnIOuRT30F8k0q3wtQaInR1VRTes8k0cfU0dwxngAD+N3dbCBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Steven\\Repos\\LudumDare51\\API\\LudumDare51.Models\\LudumDare51.Models.csproj",
+  "projectFilePath": "D:\\LudumDare51\\API\\LudumDare51.Models\\LudumDare51.Models.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Steven\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Steven\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
