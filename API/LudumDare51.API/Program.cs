@@ -12,7 +12,7 @@ var configuration = new ConfigurationBuilder()
 // Add services to the container.
 builder.Services.AddScoped<PlayerRepository>();
 builder.Services.AddScoped<IMongoClient, MongoClient>(_ =>
-    new MongoClient(MongoClientSettings.FromConnectionString(configuration["MongoDatabaseConnectionString"])));
+    new MongoClient(MongoClientSettings.FromConnectionString(configuration.GetConnectionString("MongoDatabaseConnectionString"))));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
