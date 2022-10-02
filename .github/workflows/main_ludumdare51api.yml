@@ -44,7 +44,7 @@ jobs:
         with:
           files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
         env:
-          ConnectionStrings.MongoDatabaseConnectionString: ${{ secrets.MONGODB_CONNECTION_STRING }}
+          MongoDatabaseConnectionString: ${{ secrets.MONGODB_CONNECTION_STRING }}
           App.ServerRootAddress: ${{ env.SERVER_ROOT_ADDRESS }}
 
       - name: Upload artifact for deployment job

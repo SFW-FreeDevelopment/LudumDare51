@@ -16,26 +16,50 @@ public class BaseRepository<T> where T : BaseResource
 
     public virtual async Task<List<T>> Get()
     {
-        var items = await GetCollection().AsQueryable().ToListAsync();
-        return items;
+        try
+        {
+            var items = await GetCollection().AsQueryable().ToListAsync();
+            return items;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     public virtual async Task<T> Get(string id)
     {
-        var item = await GetCollection().AsQueryable()
-            .FirstOrDefaultAsync(w => w.Id.Equals(id));
-        return item;
+        try
+        {
+            var item = await GetCollection().AsQueryable()
+                .FirstOrDefaultAsync(w => w.Id.Equals(id));
+            return item;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
     
     public virtual async Task<T> Create(T data)
     {
-        data.Id = Guid.NewGuid().ToString();
-        data.Version = 1;
-        data.CreatedAt = DateTime.UtcNow;
-        data.UpdatedAt = data.CreatedAt;
-        await GetCollection().InsertOneAsync(data);
-        var items = await GetCollection().AsQueryable().ToListAsync();
-        return items?.FirstOrDefault(x => x.Id.Equals(data.Id));
+        try
+        {
+            data.Id = Guid.NewGuid().ToString();
+            data.Version = 1;
+            data.CreatedAt = DateTime.UtcNow;
+            data.UpdatedAt = data.CreatedAt;
+            await GetCollection().InsertOneAsync(data);
+            var items = await GetCollection().AsQueryable().ToListAsync();
+            return items?.FirstOrDefault(x => x.Id.Equals(data.Id));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     public virtual async Task<T> Update(string id, T data)
