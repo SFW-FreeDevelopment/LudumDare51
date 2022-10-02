@@ -6,15 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="1488c01c-8a87-4044-95a1-fa30bd92bc68" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Bat.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Blob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Blob.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Ghost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Ghost.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/EnemyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ObjectPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair003.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair005.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair028.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair028.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair047.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair047.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair060.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair060.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair063.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair063.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair071.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair071.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair078.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair078.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair102.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair133.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair133.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair159.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair159.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair188.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/crosshair188.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

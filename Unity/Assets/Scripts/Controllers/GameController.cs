@@ -37,9 +37,10 @@ namespace LD51.Unity.Controllers
             while (true)
             {
                 Spawn();
-                if (TimeElapsed > 60) Spawn();
-                if (TimeElapsed > 120) Spawn();
-                if (TimeElapsed > 180) Spawn();
+                for (var i = 0; i < TimeElapsed / TimeBetweenWaves; i++)
+                {
+                    Spawn();
+                }
                 yield return new WaitForSeconds(TimeBetweenWaves);
             }
 

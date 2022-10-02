@@ -8,6 +8,7 @@ namespace LD51.Unity.Controllers
     {
         private Rigidbody2D _rigidbody2D;
         private Transform _playerTransform;
+        private SpriteRenderer _spriteRenderer;
         private float moveLimiter = 0.7f;
         
         public short CurrentHealth { get; private set; }
@@ -17,6 +18,7 @@ namespace LD51.Unity.Controllers
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Start()
@@ -36,6 +38,11 @@ namespace LD51.Unity.Controllers
             _rigidbody2D.velocity = new Vector2(movementVector.x * _enemy.Speed, movementVector.y * _enemy.Speed);
             
             Vector2.MoveTowards(transform.position, _playerTransform.position, Single.Epsilon);
+
+            if (_spriteRenderer.flipX && movementVector.x > 0)
+                _spriteRenderer.flipX = false;
+            else if (!_spriteRenderer.flipX && movementVector.x < 0)
+                _spriteRenderer.flipX = true;
         }
 
         public void OnTakeDamage()
