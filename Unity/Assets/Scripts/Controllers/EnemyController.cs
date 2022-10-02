@@ -51,18 +51,19 @@ namespace LD51.Unity.Controllers
             CurrentHealth -= 10;
             if (CurrentHealth <= 0)
             {
-                // TODO: Enemy dies
+                GameController.Instance.Score += 10;
                 Destroy(gameObject);
             }
         }
 
         private void OnCollisionEnter2D(Collision2D col)
         {
-            Debug.Log("Knockback check");
             if (col.gameObject.CompareTag("Player"))
             {
+                // TODO: Add sound fx
+                CinemachineShake.Instance.ShakeCamera(5f, .1f);
+                GameController.Instance.TakeDamage(_enemy.Damage);
                 Instantiate(GameController.Instance.BloodSplatterPrefab, col.gameObject.transform.position, Quaternion.identity);
-                Debug.Log("Is player");
                 var movementVector = (col.gameObject.transform.position - gameObject.transform.position).normalized;
                 col.rigidbody.AddForce(movementVector * 5000);
             }
