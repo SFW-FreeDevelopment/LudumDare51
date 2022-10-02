@@ -1,5 +1,6 @@
 ﻿using System;
 using LD51.Unity.Models;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace LD51.Unity.Controllers
@@ -52,6 +53,18 @@ namespace LD51.Unity.Controllers
             {
                 // TODO: Enemy dies
                 Destroy(gameObject);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            Debug.Log("Knockback check");
+            if (col.gameObject.CompareTag("Player"))
+            {
+                Instantiate(GameController.Instance.BloodSplatterPrefab, col.gameObject.transform.position, Quaternion.identity);
+                Debug.Log("Is player");
+                var movementVector = (col.gameObject.transform.position - gameObject.transform.position).normalized;
+                col.rigidbody.AddForce(movementVector * 5000);
             }
         }
     }

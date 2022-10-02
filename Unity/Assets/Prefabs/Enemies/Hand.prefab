@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1498639068363193521}
   - component: {fileID: 1498639068363193532}
   - component: {fileID: 1498639068363193534}
+  - component: {fileID: 7320916666239435469}
+  - component: {fileID: 72920165542891169}
   - component: {fileID: 1498639068363193533}
   m_Layer: 0
   m_Name: Hand
@@ -142,9 +144,41 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.07315558, y: -0.09240693}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.28074867
+--- !u!58 &7320916666239435469
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498639068363193522}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.2, y: 0.45}
+  serializedVersion: 2
+  m_Radius: 0.22005343
+--- !u!58 &72920165542891169
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498639068363193522}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.35, y: -0.3}
+  serializedVersion: 2
+  m_Radius: 0.175
 --- !u!114 &1498639068363193533
 MonoBehaviour:
   m_ObjectHideFlags: 0
