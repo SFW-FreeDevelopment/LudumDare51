@@ -59,9 +59,9 @@ namespace LD51.Unity.UI
             });
             _rightCrosshairButton.onClick.AddListener(() =>
             {
-                _currentCrosshairIndex = _currentCrosshairIndex == 0
-                    ? Crosshairs.Length - 1
-                    : _currentCrosshairIndex - 1;
+                _currentCrosshairIndex = _currentCrosshairIndex == Crosshairs.Length - 1
+                    ? 0
+                    : _currentCrosshairIndex + 1;
 
                 _crosshairImage.sprite = Crosshairs[_currentCrosshairIndex];
                 

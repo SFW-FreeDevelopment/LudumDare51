@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 18078870158100341}
   - component: {fileID: 2011002569}
   - component: {fileID: 2011002568}
+  - component: {fileID: 8702142613137871546}
+  - component: {fileID: 6474515962031607171}
   - component: {fileID: 1145471071084528558}
   m_Layer: 0
   m_Name: Bat
@@ -145,6 +147,38 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!58 &8702142613137871546
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18078870158100336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.7, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!58 &6474515962031607171
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18078870158100336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.7, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!114 &1145471071084528558
 MonoBehaviour:
   m_ObjectHideFlags: 0

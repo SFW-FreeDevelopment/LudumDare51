@@ -31,6 +31,17 @@ namespace LD51.Unity.Controllers
             
             if (Input.GetMouseButton(0) && NextShotAvailable)
                 Shoot();
+            
+            var position = transform.position;
+            transform.position = new Vector2(
+                Mathf.Clamp(position.x, -29, 29),
+                Mathf.Clamp(position.y, -29, 29)
+            );
+            
+            if (SpriteRenderer.flipX && horizontal > 0)
+                SpriteRenderer.flipX = false;
+            else if (!SpriteRenderer.flipX && horizontal < 0)
+                SpriteRenderer.flipX = true;
         }
 
         private void Shoot()

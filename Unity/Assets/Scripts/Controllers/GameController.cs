@@ -15,6 +15,8 @@ namespace LD51.Unity.Controllers
         
         [SerializeField] private Spawner[] _spawners;
         [Header("Prefabs")]
+        [SerializeField] private GameObject _bloodSplatterPrefab;
+        public GameObject BloodSplatterPrefab => _bloodSplatterPrefab;
         [SerializeField] private GameObject[] _enemyPrefabs;
         
         public static GameController Instance { get; private set; }
