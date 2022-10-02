@@ -1,4 +1,5 @@
 ﻿using System;
+using LD51.Unity.Models;
 using UnityEngine;
 
 namespace LD51.Unity.Controllers
@@ -7,8 +8,9 @@ namespace LD51.Unity.Controllers
     {
         private Rigidbody2D _rigidbody2D;
         private Transform _playerTransform;
-        private int _moveSpeed = 5;
         private float moveLimiter = 0.7f;
+
+        [SerializeField] private Enemy _enemy;
 
         private void Awake()
         {
@@ -28,7 +30,7 @@ namespace LD51.Unity.Controllers
                 movementVector.x *= moveLimiter;
                 movementVector.y *= moveLimiter;
             } 
-            _rigidbody2D.velocity = new Vector2(movementVector.x * _moveSpeed, movementVector.y * _moveSpeed);
+            _rigidbody2D.velocity = new Vector2(movementVector.x * _enemy.Speed, movementVector.y * _enemy.Speed);
             
             Vector2.MoveTowards(transform.position, _playerTransform.position, Single.Epsilon);
         }

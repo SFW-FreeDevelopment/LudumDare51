@@ -4467,7 +4467,7 @@ GameObject:
   - component: {fileID: 661618633}
   - component: {fileID: 661618635}
   m_Layer: 0
-  m_Name: blob_2
+  m_Name: Blob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4533,7 +4533,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 683358e29e11f32469da3628b86cb3f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4588,6 +4588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740921a05d76487c9e2c8b1d509b524b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemy: {fileID: 11400000, guid: 59bc284d6dbea414eb465202569577e8, type: 2}
 --- !u!50 &661618635
 Rigidbody2D:
   serializedVersion: 4
@@ -7057,6 +7058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740921a05d76487c9e2c8b1d509b524b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemy: {fileID: 11400000, guid: f8fb4b57206b49f4580fd3bfe78a324d, type: 2}
 --- !u!4 &1160706447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3456742277651684054, guid: ad8d46a91be2882419b4e613c9741839, type: 3}
@@ -12204,6 +12206,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 18078870158100343, guid: 29b77a17fa3a25c409648b80d1855efc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145471071084528558, guid: 29b77a17fa3a25c409648b80d1855efc, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 11400000, guid: ea7b30f13d731e246af2e92987f396ad, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29b77a17fa3a25c409648b80d1855efc, type: 3}
 --- !u!1001 &127654957717391794
@@ -12518,6 +12528,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3882005049096074866, guid: 05617bc0961cd5d46bc6068617856e96, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3882005049096074867, guid: 05617bc0961cd5d46bc6068617856e96, type: 3}
       propertyPath: m_RootOrder
       value: 7

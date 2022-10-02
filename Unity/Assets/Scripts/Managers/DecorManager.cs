@@ -32,11 +32,11 @@ namespace LD51.Unity.Managers
                 {
                     if (decor.Position.y > _playerTransform.position.y)
                     {
-                        decor.SpriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder - 1;
+                        decor.SpriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder - 5;
                     }
                     else if (decor.Position.y < _playerTransform.position.y)
                     {
-                        decor.SpriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + 1;
+                        decor.SpriteRenderer.sortingOrder = _playerSpriteRenderer.sortingOrder + 5;
                     }
                 }
                 catch(Exception e)
