@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hand
   m_EditorClassIdentifier: 
   Id: e4bc2dfe-ec67-41e5-9b40-c36f41e1f570
-  Health: 10
-  Damage: 10
-  Speed: 1
+  Health: 8
+  Damage: 7
+  Speed: 4
