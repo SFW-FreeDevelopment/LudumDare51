@@ -13,5 +13,9 @@
         public string ShirtColor { get; set; }
         
         public string PantColor { get; set; }
+        
+        public ushort Score { get; set; }
+        
+        public ushort Waves { get; set; }
     }
 }
