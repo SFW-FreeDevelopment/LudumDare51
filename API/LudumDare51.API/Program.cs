@@ -3,6 +3,8 @@ using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", true, true)

@@ -10,10 +10,10 @@ env:
 on:
   push:
     branches:
-      - main
+      - 'main'
     paths:
-      - 'API/LudumDare51.API'
-      - 'API/LudumDare51.API.Models'
+      - 'API/LudumDare51.API/**'
+      - 'API/LudumDare51.API.Models/**'
       - '!Unity/**'
   workflow_dispatch:
 
