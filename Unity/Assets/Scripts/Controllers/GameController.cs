@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Linq;
 using LD51.Unity.Scene;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace LD51.Unity.Controllers
@@ -12,9 +14,14 @@ namespace LD51.Unity.Controllers
         private const float TimeBetweenWaves = 10;
 
         private Spawner _lastSpawner = null;
-        public int PlayerHealth { get; private set; }
+        public int CurrentWave { get; private set; } = 1;
+        public int PlayerHealth { get; private set; } = 100;
+        public int Score { get; set; }
         
         [SerializeField] private Spawner[] _spawners;
+        [SerializeField] private Slider _healthBar;
+        [SerializeField] private GameObject _gameOverPanel;
+        [SerializeField] private TextMeshProUGUI _finalScoreText;
         [Header("Prefabs")]
         [SerializeField] private GameObject _bloodSplatterPrefab;
         public GameObject BloodSplatterPrefab => _bloodSplatterPrefab;
@@ -31,6 +38,7 @@ namespace LD51.Unity.Controllers
         
         private void Start()
         {
+            _healthBar.value = PlayerHealth / 100f;
             StartCoroutine(TimerRoutine());
             StartCoroutine(SpawnRoutine());
         }
@@ -44,10 +52,14 @@ namespace LD51.Unity.Controllers
                 IsGameOver = true;
                 GameOver();
             }
+            _healthBar.value = PlayerHealth / 100f;
         }
 
         private void GameOver()
         {
+            _finalScoreText.text = $"<b>Score:</b> {Score}";
+            _gameOverPanel.SetActive(true);
+
             // TODO: Contact the API
         }
         
@@ -83,6 +95,8 @@ namespace LD51.Unity.Controllers
             {
                 yield return new WaitForSeconds(1);
                 TimeElapsed++;
+                if (TimeElapsed % 10 == 0)
+                    CurrentWave++;
             }
         }
     }
