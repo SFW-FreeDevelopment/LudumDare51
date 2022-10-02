@@ -9,10 +9,18 @@ namespace LD51.Unity.UI
         
         private void Start()
         {
-            GetComponent<Button>().onClick.AddListener(() =>
-            {
-                _target.SetActive(false);
-            });
+            GetComponent<Button>().onClick.AddListener(Close);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                Close();
+        }
+
+        private void Close()
+        {
+            _target.SetActive(false);
         }
     }
 }
