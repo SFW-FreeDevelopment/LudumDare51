@@ -1,6 +1,3 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace LD51.Unity.Controllers
@@ -8,6 +5,7 @@ namespace LD51.Unity.Controllers
     public class PlayerController : MonoBehaviour
     {
         public GameObject Reticle;
+        public SpriteRenderer SpriteRenderer { get; private set; }
         [Header("Prefabs")]
         public GameObject BulletPrefab;
         
@@ -23,6 +21,7 @@ namespace LD51.Unity.Controllers
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            SpriteRenderer = GetComponent<SpriteRenderer>();
         }
         
         private void Update()

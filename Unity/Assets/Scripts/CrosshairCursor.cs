@@ -4,14 +4,19 @@ namespace LD51.Unity
 {
     public class CrosshairCursor : MonoBehaviour
     {
-        void Awake()
+        private Camera _camera;
+        
+        private void Awake()
         {
+            _camera = Camera.main;
+            #if !UNITY_EDITOR
             Cursor.visible = false;
+            #endif
         }
 
-        void Update()
+        private void Update()
         {
-            Vector2 mouseCursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseCursorPos = _camera.ScreenToWorldPoint(Input.mousePosition);
             transform.position = mouseCursorPos;
         }
     }
