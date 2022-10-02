@@ -2,6 +2,6 @@
 
 public class ProcessGameResultsRequest
 {
-    public ushort Score { get; set; }
-    public ushort Waves { get; set; }
+    public int Score { get; set; }
+    public int Waves { get; set; }
 }
