@@ -30,15 +30,18 @@ namespace LD51.Unity.Controllers
             vertical = Input.GetAxisRaw("Vertical"); // -1 is down
             
             if (Input.GetMouseButton(0) && NextShotAvailable)
-            {
-                _nextShotAvailableAt = Time.time + IntervalBetweenShots;
+                Shoot();
+        }
 
-                CinemachineShake.Instance.ShakeCamera(5f, .1f);
+        private void Shoot()
+        {
+            _nextShotAvailableAt = Time.time + IntervalBetweenShots;
+
+            CinemachineShake.Instance.ShakeCamera(5f, .1f);
                 
-                var bulletVector = (Reticle.transform.position - transform.position).normalized * 25;
-                Instantiate(BulletPrefab, transform.position, Quaternion.identity)
-                    .GetComponent<Rigidbody2D>().AddForce(bulletVector, ForceMode2D.Impulse);
-            }
+            var bulletVector = (Reticle.transform.position - transform.position).normalized * 25;
+            Instantiate(BulletPrefab, transform.position, Quaternion.identity)
+                .GetComponent<Rigidbody2D>().AddForce(bulletVector, ForceMode2D.Impulse);  
         }
 
         private void FixedUpdate()

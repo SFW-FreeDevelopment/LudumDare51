@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 18078870158100342}
   - component: {fileID: 18078870158100343}
   - component: {fileID: 18078870158100341}
-  - component: {fileID: 1145471071084528558}
   - component: {fileID: 2011002569}
   - component: {fileID: 2011002568}
+  - component: {fileID: 1145471071084528558}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,19 +108,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1145471071084528558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18078870158100336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740921a05d76487c9e2c8b1d509b524b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemy: {fileID: 11400000, guid: ea7b30f13d731e246af2e92987f396ad, type: 2}
 --- !u!50 &2011002569
 Rigidbody2D:
   serializedVersion: 4
@@ -158,3 +145,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &1145471071084528558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18078870158100336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740921a05d76487c9e2c8b1d509b524b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 11400000, guid: ea7b30f13d731e246af2e92987f396ad, type: 2}
