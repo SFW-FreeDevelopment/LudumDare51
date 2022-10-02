@@ -13,7 +13,7 @@ namespace LD51.Unity.Controllers
         private float _nextShotAvailableAt = 0;
         private bool NextShotAvailable => Time.time >= _nextShotAvailableAt;
 
-        [SerializeField] private float _movementForce = 10.0f;
+        [SerializeField] private float _movementForce = 5.0f;
         private Rigidbody2D _rigidbody2D;
         private float horizontal, vertical;
         private float moveLimiter = 0.7f;

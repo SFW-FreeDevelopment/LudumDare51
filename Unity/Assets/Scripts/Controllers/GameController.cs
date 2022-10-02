@@ -12,6 +12,7 @@ namespace LD51.Unity.Controllers
         private const float TimeBetweenWaves = 10;
 
         private Spawner _lastSpawner = null;
+        public int PlayerHealth { get; private set; }
         
         [SerializeField] private Spawner[] _spawners;
         [Header("Prefabs")]
@@ -34,6 +35,22 @@ namespace LD51.Unity.Controllers
             StartCoroutine(SpawnRoutine());
         }
 
+        public void TakeDamage(int damage)
+        {
+            PlayerHealth -= damage;
+            if (PlayerHealth <= 0)
+            {
+                PlayerHealth = 0;
+                IsGameOver = true;
+                GameOver();
+            }
+        }
+
+        private void GameOver()
+        {
+            // TODO: Contact the API
+        }
+        
         private IEnumerator SpawnRoutine()
         {
             while (true)
