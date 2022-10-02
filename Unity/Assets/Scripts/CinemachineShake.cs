@@ -1,4 +1,5 @@
 using Cinemachine;
+using LD51.Unity.Managers;
 using UnityEngine;
 
 namespace LD51.Unity
@@ -21,6 +22,8 @@ namespace LD51.Unity
 
         public void ShakeCamera(float intensity, float time)
         {
+            if (!SettingsManager.Instance.Settings.UseScreenShake) return;
+            
             var cinemachineBasicMultiChannelPerlin =
                 cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
