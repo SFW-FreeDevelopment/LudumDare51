@@ -4,6 +4,8 @@ namespace LD51.Unity.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController Instance { get; private set; }
+
         public GameObject Reticle;
         public SpriteRenderer SpriteRenderer { get; private set; }
         [Header("Prefabs")]
@@ -20,6 +22,7 @@ namespace LD51.Unity.Controllers
         
         private void Awake()
         {
+            Instance = this;
             _rigidbody2D = GetComponent<Rigidbody2D>();
             SpriteRenderer = GetComponent<SpriteRenderer>();
         }
@@ -65,6 +68,11 @@ namespace LD51.Unity.Controllers
             } 
 
             _rigidbody2D.velocity = new Vector2(horizontal * _movementForce, vertical * _movementForce);
+        }
+
+        public void Die()
+        {
+            Destroy(gameObject);
         }
     }
 }

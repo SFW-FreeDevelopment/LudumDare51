@@ -30,6 +30,8 @@ namespace LD51.Unity.Controllers
         
         private void FixedUpdate()
         {
+            if (GameController.Instance.IsGameOver) return;
+            
             var movementVector = (_playerTransform.position - transform.position).normalized;
             if (movementVector.x != 0 && movementVector.y != 0)
             {

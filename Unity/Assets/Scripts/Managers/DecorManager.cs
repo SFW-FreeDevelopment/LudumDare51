@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LD51.Unity.Controllers;
 using UnityEngine;
 
 namespace LD51.Unity.Managers
@@ -26,6 +27,8 @@ namespace LD51.Unity.Managers
 
         private void FixedUpdate()
         {
+            if (GameController.Instance.IsGameOver) return;
+
             foreach (var decor in _decorList)
             {
                 try

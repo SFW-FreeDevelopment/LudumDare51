@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using LD51.Unity.Scene;
 using TMPro;
@@ -17,7 +18,9 @@ namespace LD51.Unity.Controllers
         public int CurrentWave { get; private set; } = 1;
         public int PlayerHealth { get; private set; } = 100;
         public int Score { get; set; }
-        
+
+        [SerializeField] private GameObject _spawnPointParent;
+        private Transform[] _spawnPoints = Array.Empty<Transform>();
         [SerializeField] private Spawner[] _spawners;
         [SerializeField] private Slider _healthBar;
         [SerializeField] private GameObject _gameOverPanel;
@@ -26,6 +29,7 @@ namespace LD51.Unity.Controllers
         [SerializeField] private GameObject _bloodSplatterPrefab;
         public GameObject BloodSplatterPrefab => _bloodSplatterPrefab;
         [SerializeField] private GameObject[] _enemyPrefabs;
+        [SerializeField] private GameObject[] _foodPrefabs;
         
         public static GameController Instance { get; private set; }
         public int TimeElapsed { get; private set; } = 0;
@@ -39,10 +43,21 @@ namespace LD51.Unity.Controllers
         private void Start()
         {
             _healthBar.value = PlayerHealth / 100f;
+
+            _spawnPoints = _spawnPointParent.GetComponentsInChildren<Transform>().Except(new [] { transform }).ToArray();
+
             StartCoroutine(TimerRoutine());
-            StartCoroutine(SpawnRoutine());
+            StartCoroutine(SpawnMonsterRoutine());
+            StartCoroutine(SpawnFoodRoutine());
         }
 
+        public void GainLife(int health)
+        {
+            PlayerHealth += health;
+            if (PlayerHealth > 100) PlayerHealth = 100;
+            _healthBar.value = PlayerHealth / 100f;
+        }
+        
         public void TakeDamage(int damage)
         {
             PlayerHealth -= damage;
@@ -57,13 +72,31 @@ namespace LD51.Unity.Controllers
 
         private void GameOver()
         {
+            PlayerController.Instance.Die();
+            
             _finalScoreText.text = $"<b>Score:</b> {Score}";
             _gameOverPanel.SetActive(true);
 
             // TODO: Contact the API
         }
+
+        private IEnumerator SpawnFoodRoutine()
+        {
+            while (true)
+            {
+                Spawn();
+                yield return new WaitForSeconds(TimeBetweenWaves);
+            }
+
+            void Spawn()
+            {
+                var spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
+                var food = _foodPrefabs[Random.Range(0, _foodPrefabs.Length)];
+                Instantiate(food, spawnPoint.position, quaternion.identity);
+            }
+        }
         
-        private IEnumerator SpawnRoutine()
+        private IEnumerator SpawnMonsterRoutine()
         {
             while (true)
             {
