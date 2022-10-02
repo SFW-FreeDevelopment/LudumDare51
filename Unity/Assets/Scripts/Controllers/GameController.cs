@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using LD51.Unity.Managers;
 using LD51.Unity.Scene;
 using TMPro;
 using Unity.Mathematics;
@@ -59,8 +60,7 @@ namespace LD51.Unity.Controllers
         {
             _finalScoreText.text = $"<b>Score:</b> {Score}";
             _gameOverPanel.SetActive(true);
-
-            // TODO: Contact the API
+            PlayerManager.Instance.Save(CurrentWave, Score);
         }
         
         private IEnumerator SpawnRoutine()

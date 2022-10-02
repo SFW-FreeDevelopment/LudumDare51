@@ -24,10 +24,18 @@ namespace LD51.Unity.Managers
             }
         }
 
-        public void Save()
+        public void Save(int waves, int score)
         {
             var json = JsonConvert.SerializeObject(Player);
             PlayerPrefs.SetString("PlayerData", json);
+            PlayerService.ProcessGameResults(Player.Id, new GameResults
+            {
+                Waves = waves,
+                Score = score
+            }, player =>
+            {
+                Player = player;
+            });
         }
 
         private void Load()

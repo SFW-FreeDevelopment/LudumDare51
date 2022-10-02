@@ -48,5 +48,21 @@ namespace LD51.Unity.Services
                 action?.Invoke(Player);
             }
         }
+        
+        public static void ProcessGameResults(string id, GameResults gameResults, Action<Player> action = null)
+        {
+            if (LastFetched == null || LastFetched.Value.AddMinutes(1) < DateTime.Now)
+            {
+                PlayerClient.ProcessGameResults(id, gameResults, player =>
+                {
+                    Player = player;
+                    action?.Invoke(Player);
+                });
+            }
+            else
+            {
+                action?.Invoke(Player);
+            }
+        }
     }
 }
