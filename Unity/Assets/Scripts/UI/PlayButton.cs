@@ -12,7 +12,7 @@ namespace LD51.Unity
         {
             GetComponent<Button>().onClick.AddListener(() =>
             {
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Minigame");
             });
         }
     }
