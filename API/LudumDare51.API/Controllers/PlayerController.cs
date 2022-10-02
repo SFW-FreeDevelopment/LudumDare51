@@ -7,7 +7,7 @@ using Swashbuckle.Swagger.Annotations;
 namespace LudumDare51.API.Controllers
 {
     [ApiController]
-    [Route("player")]
+    [Route("players")]
     public class PlayerController : ControllerBase
     {
         private readonly PlayerRepository _playerRepository;
@@ -41,6 +41,29 @@ namespace LudumDare51.API.Controllers
         {
             var player = await _playerRepository.Create(new Player(request));
             return Created($"player/{player.Id}", player);
+        }
+        
+        [HttpPatch("{id}/processGameResults")]
+        [SwaggerResponse(StatusCodes.Status201Created, null, typeof(Player))]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, null)]
+        public async Task<IActionResult> ProcessGameResults([FromRoute] string id, [FromBody] ProcessGameResultsRequest request)
+        {
+            var player = await _playerRepository.Get(id);
+            UpdatePlayerStats(player, request);
+            return Ok(await _playerRepository.Update(id, player));
+        }
+
+        private static void UpdatePlayerStats(Player player, ProcessGameResultsRequest request)
+        {
+            if (request.Waves > player.Waves)
+            {
+                player.Waves = request.Waves;
+            }
+            
+            if (request.Score > player.Score)
+            {
+                player.Score = request.Score;
+            }
         }
     }
 }
