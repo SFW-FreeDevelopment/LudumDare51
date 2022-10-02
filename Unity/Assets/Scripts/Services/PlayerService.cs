@@ -8,13 +8,13 @@ namespace LD51.Unity.Services
 {
     public static class PlayerService
     {
-        public static Player Player { get; set; } = new Player();
+        public static Player Player { get; set; } = new();
         public static List<Player> Players { get; set; } = new();
         public static DateTime? LastFetched { get; set; }
 
-        public static void Save()
+        public static void Create(Player newPlayer)
         {
-            PlayerClient.Save(Player, player => { Player = player; });
+            PlayerClient.Create(newPlayer, player => { Player = player; });
         }
         
         public static void FetchAll(Action<List<Player>> action = null)
@@ -33,11 +33,11 @@ namespace LD51.Unity.Services
             }
         }
 
-        public static void Fetch(Action<Player> action = null)
+        public static void Fetch(string id, Action<Player> action = null)
         {
             if (LastFetched == null || LastFetched.Value.AddMinutes(1) < DateTime.Now)
             {
-                PlayerClient.Fetch(player =>
+                PlayerClient.Fetch(id, player =>
                 {
                     Player = player;
                     action?.Invoke(Player);

@@ -10,7 +10,7 @@ namespace LD51.Unity.Clients
 {
     public class PlayerClient
     {
-        public static void Save(Player player, Action<Player> successCallback)
+        public static void Create(Player player, Action<Player> successCallback)
         {
             var json = JsonConvert.SerializeObject(player, Formatting.Indented);
             Debug.Log(json);
@@ -18,7 +18,7 @@ namespace LD51.Unity.Clients
             var url = $"{Constants.ApiUrl}/players";
             Debug.Log(url);
         
-            RestClient.Put(url, json)
+            RestClient.Post(url, json)
                 .Then(response =>
                 {
                     Debug.Log("Request successful");
@@ -29,14 +29,13 @@ namespace LD51.Unity.Clients
                 {
                     Debug.Log("Request failed");
                     Debug.Log(error?.InnerException?.Message ?? "");
-                    Debug.Log($"Could not save the player.{Environment.NewLine}{error.Message}");
+                    Debug.Log($"Could not save the player.{Environment.NewLine}{error?.Message}");
                 });
         }
         
         public static void FetchAll(Action<List<Player>> successCallback)
         {
-            var encodedDeviceId = SystemInfo.deviceUniqueIdentifier.ToBase64String();
-            var url = $"{Constants.ApiUrl}/player";
+            var url = $"{Constants.ApiUrl}/players";
             Debug.Log(url);
         
             RestClient.Get(url)
@@ -51,14 +50,13 @@ namespace LD51.Unity.Clients
                 {
                     Debug.Log("Request failed");
                     Debug.Log(error?.InnerException?.Message ?? "");
-                    Debug.Log($"Could not fetch the player.{Environment.NewLine}{error.Message}");
+                    Debug.Log($"Could not fetch the players.{Environment.NewLine}{error?.Message}");
                 });
         }
 
-        public static void Fetch(Action<Player> successCallback)
+        public static void Fetch(string id, Action<Player> successCallback)
         {
-            var encodedDeviceId = SystemInfo.deviceUniqueIdentifier.ToBase64String();
-            var url = $"{Constants.ApiUrl}/players/{encodedDeviceId}?useOwnerId=true";
+            var url = $"{Constants.ApiUrl}/players/{id}";
             Debug.Log(url);
         
             RestClient.Get(url)
@@ -73,7 +71,28 @@ namespace LD51.Unity.Clients
                 {
                     Debug.Log("Request failed");
                     Debug.Log(error?.InnerException?.Message ?? "");
-                    Debug.Log($"Could not fetch the player.{Environment.NewLine}{error.Message}");
+                    Debug.Log($"Could not fetch the player.{Environment.NewLine}{error?.Message}");
+                });
+        }
+        
+        public static void ProcessGameResults(string id, GameResults gameResults, Action<Player> successCallback)
+        {
+            var url = $"{Constants.ApiUrl}/players/{id}/processGameResults";
+            Debug.Log(url);
+        
+            RestClient.Patch(url, gameResults)
+                .Then(response =>
+                {
+                    Debug.Log("Request successful");
+                    var deserializedPlayer = JsonConvert.DeserializeObject<Player>(response.Text);
+                    successCallback(deserializedPlayer);
+                    Debug.Log(JsonConvert.SerializeObject(deserializedPlayer, Formatting.Indented));
+                })
+                .Catch(error =>
+                {
+                    Debug.Log("Request failed");
+                    Debug.Log(error?.InnerException?.Message ?? "");
+                    Debug.Log($"Could not fetch the player.{Environment.NewLine}{error?.Message}");
                 });
         }
     }
