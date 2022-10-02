@@ -1,9 +1,18 @@
+using LudumDare51.API.Database.Repositories;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", true, true)
+    .AddEnvironmentVariables()
+    .Build();
 
+// Add services to the container.
+builder.Services.AddScoped<PlayerRepository>();
+builder.Services.AddScoped<IMongoClient, MongoClient>(_ =>
+    new MongoClient(MongoClientSettings.FromConnectionString(configuration["MongoDatabaseConnectionString"])));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
