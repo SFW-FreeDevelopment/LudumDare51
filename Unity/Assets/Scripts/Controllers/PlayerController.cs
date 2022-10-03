@@ -67,7 +67,7 @@ namespace LD51.Unity.Controllers
                 // limit movement speed diagonally, so you move at 70% speed
                 horizontal *= moveLimiter;
                 vertical *= moveLimiter;
-            }
+            } 
 
             _rigidbody2D.velocity = new Vector2(horizontal * _movementForce, vertical * _movementForce);
         }

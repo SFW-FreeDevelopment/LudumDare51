@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using System.Threading.Tasks;
 using LD51.Unity.Managers;
 using LD51.Unity.Scene;
 using TMPro;
@@ -74,7 +73,6 @@ namespace LD51.Unity.Controllers
 
         private void GameOver()
         {
-            Cursor.visible = true;
             AudioManager.Instance.Play("explosion");
             var soundRng = Random.Range(0, 3);
             var soundName = soundRng switch
