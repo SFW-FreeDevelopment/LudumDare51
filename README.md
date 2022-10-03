@@ -1,5 +1,9 @@
-# LudumDare51
+# LudumDare51, AKA Panic at the Graveyard
 Game jam project for [Ludum Dare 51 - "Every 10 seconds"](https://ldjam.com/events/ludum-dare/51).
+
+In our Ludum Dare entry [Panic at the Graveyard](https://ldjam.com/events/ludum-dare/51/panic-at-the-graveyard), fight your way through endless and ever growing waves of the undead. See how long you can survive the night in Panic at the Graveyard.
+
+Move your mouse to aim and shoot the invading hordes of Halloween creatures. Survive as many waves as possible!
 
 ## Members
 - [@StevenGarberg](https://github.com/StevenGarberg) | Development, Sound, & Director
