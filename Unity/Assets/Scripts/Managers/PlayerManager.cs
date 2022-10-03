@@ -44,11 +44,9 @@ namespace LD51.Unity.Managers
                 Save();
                 PlayerService.Create(Player);
             }
-
-            var json = JsonConvert.SerializeObject(Player);
-            PlayerPrefs.SetString("PlayerData", json);
+            
             Debug.Log($"Wave: {waves}{Environment.NewLine}Score: {score}");
-            PlayerService.ProcessGameResults(Player.Id, new GameResults
+            PlayerService.ProcessGameResults(Player?.Id, new GameResults
             {
                 Waves = waves,
                 Score = score
@@ -60,6 +58,10 @@ namespace LD51.Unity.Managers
         {
             Player = ReadFromPlayerPrefs();
             Save();
+            PlayerService.Fetch(Player?.Id, player =>
+            {
+                Player = player;
+            });
         }
 
         private Player ReadFromPlayerPrefs()
@@ -73,6 +75,7 @@ namespace LD51.Unity.Managers
             }
 
             var json = PlayerPrefs.GetString("PlayerData");
+            Debug.Log($"Player Data From Prefs: {json}");
             try
             {
                 Player = JsonConvert.DeserializeObject<Player>(json) ?? new Player
