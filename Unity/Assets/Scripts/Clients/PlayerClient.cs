@@ -79,7 +79,7 @@ namespace LD51.Unity.Clients
             var url = $"{Constants.ApiUrl}/players/{id}/processGameResults";
             Debug.Log(url);
             Debug.Log(JsonConvert.SerializeObject(gameResults));
-            RestClient.Post(url, gameResults)
+            RestClient.Patch(url, gameResults)
                 .Then(response =>
                 {
                     Debug.Log("Request successful");
