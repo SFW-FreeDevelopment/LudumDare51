@@ -43,7 +43,7 @@ namespace LudumDare51.API.Controllers
             return Created($"player/{player.Id}", player);
         }
         
-        [HttpPost("{id}/processGameResults")]
+        [HttpPatch("{id}/processGameResults")]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(Player))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null)]
         public async Task<IActionResult> ProcessGameResults([FromRoute] string id, [FromBody] ProcessGameResultsRequest request)
