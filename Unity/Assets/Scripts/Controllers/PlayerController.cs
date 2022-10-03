@@ -1,3 +1,4 @@
+using LD51.Unity.Managers;
 using UnityEngine;
 
 namespace LD51.Unity.Controllers
@@ -51,7 +52,8 @@ namespace LD51.Unity.Controllers
         {
             _nextShotAvailableAt = Time.time + IntervalBetweenShots;
 
-            CinemachineShake.Instance.ShakeCamera(5f, .1f);
+            CinemachineShake.Instance.ShakeCamera(2f, .1f);
+            AudioManager.Instance.Play("laserShoot");
                 
             var bulletVector = (Reticle.transform.position - transform.position).normalized * 25;
             Instantiate(BulletPrefab, transform.position, Quaternion.identity)
