@@ -64,7 +64,7 @@ namespace LD51.Unity.Clients
                 {
                     Debug.Log("Request successful");
                     var deserializedPlayer = JsonConvert.DeserializeObject<Player>(response.Text);
-                    successCallback(deserializedPlayer);
+                    successCallback(deserializedPlayer ?? new Player(id));
                     Debug.Log(JsonConvert.SerializeObject(deserializedPlayer, Formatting.Indented));
                 })
                 .Catch(error =>
