@@ -19,6 +19,7 @@ public class Player : BaseResource
 
     public Player(PlayerCreateRequest playerCreateRequest)
     {
+        Id = playerCreateRequest.Id;
         DisplayName = playerCreateRequest.DisplayName;
         ShirtColor = playerCreateRequest.ShirtColor;
         PantColor = playerCreateRequest.PantColor;
