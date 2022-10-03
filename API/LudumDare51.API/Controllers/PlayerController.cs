@@ -3,6 +3,7 @@ using LudumDare51.API.Models;
 using LudumDare51.API.Models.Request;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.Swagger.Annotations;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace LudumDare51.API.Controllers
 {
@@ -11,10 +12,12 @@ namespace LudumDare51.API.Controllers
     public class PlayerController : ControllerBase
     {
         private readonly PlayerRepository _playerRepository;
-        
-        public PlayerController(PlayerRepository playerRepository)
+        private readonly ILogger<PlayerController> _logger;
+
+        public PlayerController(ILogger<PlayerController> logger, PlayerRepository playerRepository)
         {
             _playerRepository = playerRepository;
+            _logger = logger;
         }
         
         [HttpGet]
@@ -43,11 +46,12 @@ namespace LudumDare51.API.Controllers
             return Created($"player/{player.Id}", player);
         }
         
-        [HttpPatch("{id}/processGameResults")]
+        [HttpPost("{id}/processGameResults")]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(Player))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null)]
         public async Task<IActionResult> ProcessGameResults([FromRoute] string id, [FromBody] ProcessGameResultsRequest request)
         {
+            _logger.Log(LogLevel.Information, $"Id: {id}{Environment.NewLine}Request: {JsonSerializer.Serialize(request)}");
             var player = await _playerRepository.Get(id);
             UpdatePlayerStats(player, request);
             return Ok(await _playerRepository.Update(id, player));

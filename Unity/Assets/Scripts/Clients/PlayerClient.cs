@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using LD51.Unity.Extensions;
 using LD51.Unity.Models;
 using Newtonsoft.Json;
 using Proyecto26;
@@ -64,7 +63,7 @@ namespace LD51.Unity.Clients
                 {
                     Debug.Log("Request successful");
                     var deserializedPlayer = JsonConvert.DeserializeObject<Player>(response.Text);
-                    successCallback(deserializedPlayer ?? new Player(id));
+                    successCallback(deserializedPlayer);
                     Debug.Log(JsonConvert.SerializeObject(deserializedPlayer, Formatting.Indented));
                 })
                 .Catch(error =>
@@ -79,8 +78,8 @@ namespace LD51.Unity.Clients
         {
             var url = $"{Constants.ApiUrl}/players/{id}/processGameResults";
             Debug.Log(url);
-        
-            RestClient.Patch(url, gameResults)
+            Debug.Log(JsonConvert.SerializeObject(gameResults));
+            RestClient.Post(url, gameResults)
                 .Then(response =>
                 {
                     Debug.Log("Request successful");

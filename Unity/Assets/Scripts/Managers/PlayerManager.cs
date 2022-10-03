@@ -1,14 +1,16 @@
+using System;
 using LD51.Unity.Models;
 using LD51.Unity.Services;
 using Newtonsoft.Json;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace LD51.Unity.Managers
 {
     public class PlayerManager : MonoBehaviour
     {
         public static PlayerManager Instance { get; private set; }
-        public Player Player { get; private set; } = new();
+        public Player Player { get; private set; }
 
         private void Awake()
         {
@@ -23,8 +25,8 @@ namespace LD51.Unity.Managers
                 Destroy(gameObject);
             }
         }
-        
-        public void Save()
+
+        private void Save()
         {
             var json = JsonConvert.SerializeObject(Player);
             PlayerPrefs.SetString("PlayerData", json);
@@ -33,8 +35,18 @@ namespace LD51.Unity.Managers
 
         public void Save(int waves, int score)
         {
+            if (Player == null)
+            {
+                Player = new Player
+                {
+                    DisplayName = $"Player {Random.Range(1, 100000)}",
+                };
+                Save();
+            }
+            
             var json = JsonConvert.SerializeObject(Player);
             PlayerPrefs.SetString("PlayerData", json);
+            Debug.Log($"Wave: {waves}{Environment.NewLine}Score: {score}");
             PlayerService.ProcessGameResults(Player.Id, new GameResults
             {
                 Waves = waves,
@@ -47,37 +59,36 @@ namespace LD51.Unity.Managers
 
         private void Load()
         {
-            if (PlayerPrefs.HasKey("PlayerData"))
-            {
-                var json = PlayerPrefs.GetString("PlayerData");
-                Debug.Log(json);
-                try
-                {
-                    Player = JsonConvert.DeserializeObject<Player>(json) ?? new Player();
-                    Debug.Log(Player?.Id ?? "no id");
-                    PlayerService.Fetch(Player?.Id, player =>
-                    {
-                        Player = player;
-                    });
+            Player = ReadFromPlayerPrefs();
+            Save();
+        }
 
-                    if (Player.DisplayName == null)
-                    {
-                        Player.DisplayName = $"Player {Random.Range(1, 100000)}";
-                        Save();
-                    }
-                }
-                catch
-                {
-                    Player = new Player();
-                    Player.DisplayName = $"Player {Random.Range(1, 100000)}";
-                    Save();
-                }
-            }
-            else
+        private Player ReadFromPlayerPrefs()
+        {
+            if (!PlayerPrefs.HasKey("PlayerData"))
             {
-                Player = new Player();
-                Player.DisplayName = $"Player {Random.Range(1, 100000)}";
-                Save();
+                return new Player
+                {
+                    DisplayName = $"Player {Random.Range(1, 100000)}"
+                };
+            }
+            
+            var json = PlayerPrefs.GetString("PlayerData");
+            try
+            {
+                Player = JsonConvert.DeserializeObject<Player>(json) ?? new Player
+                {
+                    DisplayName = $"Player {Random.Range(1, 100000)}"
+                };
+                Player.Id ??= Guid.NewGuid().ToString();
+                return Player;
+            }
+            catch
+            {
+                return new Player
+                {
+                    DisplayName = $"Player {Random.Range(1, 100000)}"
+                };
             }
         }
     }
