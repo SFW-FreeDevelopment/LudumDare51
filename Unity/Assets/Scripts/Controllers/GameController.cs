@@ -88,8 +88,7 @@ namespace LD51.Unity.Controllers
             
             _finalScoreText.text = $"<b>Score:</b> {Score}";
             _gameOverPanel.SetActive(true);
-
-            // TODO: Contact the API
+            PlayerManager.Instance.Save(CurrentWave, Score);
         }
 
         private IEnumerator SpawnFoodRoutine()
