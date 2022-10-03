@@ -42,10 +42,10 @@ namespace LD51.Unity.Controllers
                 Mathf.Clamp(position.y, -29, 29)
             );
             
-            if (SpriteRenderer.flipX && horizontal > 0)
-                SpriteRenderer.flipX = false;
-            else if (!SpriteRenderer.flipX && horizontal < 0)
+            if (!SpriteRenderer.flipX && horizontal > 0)
                 SpriteRenderer.flipX = true;
+            else if (SpriteRenderer.flipX && horizontal < 0)
+                SpriteRenderer.flipX = false;
         }
 
         private void Shoot()
