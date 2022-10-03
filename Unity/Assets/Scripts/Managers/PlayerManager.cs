@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using LD51.Unity.Models;
 using LD51.Unity.Services;
 using Newtonsoft.Json;
@@ -30,10 +31,9 @@ namespace LD51.Unity.Managers
         {
             var json = JsonConvert.SerializeObject(Player);
             PlayerPrefs.SetString("PlayerData", json);
-            PlayerService.Create(Player);
         }
 
-        public void Save(int waves, int score)
+        public async Task Save(int waves, int score)
         {
             if (Player == null)
             {
@@ -42,8 +42,9 @@ namespace LD51.Unity.Managers
                     DisplayName = $"Player {Random.Range(1, 100000)}",
                 };
                 Save();
+                PlayerService.Create(Player);
             }
-            
+
             var json = JsonConvert.SerializeObject(Player);
             PlayerPrefs.SetString("PlayerData", json);
             Debug.Log($"Wave: {waves}{Environment.NewLine}Score: {score}");
@@ -51,10 +52,8 @@ namespace LD51.Unity.Managers
             {
                 Waves = waves,
                 Score = score
-            }, player =>
-            {
-                Player = player;
-            });
+            }, player => { Player = player; });
+            await Task.CompletedTask;
         }
 
         private void Load()
@@ -72,7 +71,7 @@ namespace LD51.Unity.Managers
                     DisplayName = $"Player {Random.Range(1, 100000)}"
                 };
             }
-            
+
             var json = PlayerPrefs.GetString("PlayerData");
             try
             {

@@ -46,12 +46,13 @@ namespace LudumDare51.API.Controllers
             return Created($"player/{player.Id}", player);
         }
         
-        [HttpPost("{id}/processGameResults")]
+        [HttpPatch("{id}/processGameResults")]
         [SwaggerResponse(StatusCodes.Status201Created, null, typeof(Player))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, null)]
         public async Task<IActionResult> ProcessGameResults([FromRoute] string id, [FromBody] ProcessGameResultsRequest request)
         {
-            _logger.Log(LogLevel.Information, $"Id: {id}{Environment.NewLine}Request: {JsonSerializer.Serialize(request)}");
+            var requestJson = JsonSerializer.Serialize(request);
+            _logger.LogTrace("Id: {id}\nRequest: {requestJson}", id, requestJson);
             var player = await _playerRepository.Get(id);
             UpdatePlayerStats(player, request);
             return Ok(await _playerRepository.Update(id, player));
