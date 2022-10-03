@@ -38,4 +38,4 @@ Game jam project for [Ludum Dare 51 - "Every 10 seconds"](https://ldjam.com/even
 
 ## Screenshots
 ![image](/Documentation/Images/gameplay.png)
-![image](/Documentation/Images/main-menu.png)
+![image](/Documentation/Images/menu.png)
