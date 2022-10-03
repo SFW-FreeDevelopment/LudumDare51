@@ -23,6 +23,13 @@ namespace LD51.Unity.Managers
                 Destroy(gameObject);
             }
         }
+        
+        public void Save()
+        {
+            var json = JsonConvert.SerializeObject(Player);
+            PlayerPrefs.SetString("PlayerData", json);
+            PlayerService.Create(Player);
+        }
 
         public void Save(int waves, int score)
         {
@@ -43,29 +50,34 @@ namespace LD51.Unity.Managers
             if (PlayerPrefs.HasKey("PlayerData"))
             {
                 var json = PlayerPrefs.GetString("PlayerData");
+                Debug.Log(json);
                 try
                 {
                     Player = JsonConvert.DeserializeObject<Player>(json) ?? new Player();
-                    if (Player?.Id != null)
+                    Debug.Log(Player?.Id ?? "no id");
+                    PlayerService.Fetch(Player?.Id, player =>
                     {
-                        PlayerService.Fetch(Player.Id, player =>
-                        {
-                            Player = player;
-                        });
-                    }
-                    else
+                        Player = player;
+                    });
+
+                    if (Player.DisplayName == null)
                     {
-                        Player = new Player();
+                        Player.DisplayName = $"Player {Random.Range(1, 100000)}";
+                        Save();
                     }
                 }
                 catch
                 {
                     Player = new Player();
+                    Player.DisplayName = $"Player {Random.Range(1, 100000)}";
+                    Save();
                 }
             }
             else
             {
                 Player = new Player();
+                Player.DisplayName = $"Player {Random.Range(1, 100000)}";
+                Save();
             }
         }
     }
