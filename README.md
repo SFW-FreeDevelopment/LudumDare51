@@ -2,8 +2,8 @@
 Game jam project for [Ludum Dare 51 - "Every 10 seconds"](https://ldjam.com/events/ludum-dare/51).
 
 ## Members
-- [@StevenGarberg](https://github.com/StevenGarberg) | Development, Sound, & Project Manager
-- [@christopherplummer](https://github.com/christopherplummer) | Development & Scrum Master
+- [@StevenGarberg](https://github.com/StevenGarberg) | Development, Sound, & Director
+- [@christopherplummer](https://github.com/christopherplummer) | Development, Dev Ops, & Project Manager
 - [@takhomasac](https://github.com/takhomasac) | Graphics & Sound
 - [@johnbrooks92](https://github.com/johnbrooks92) | Development
 - [@jortothedan](https://github.com/jortothedan) | Development
