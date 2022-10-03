@@ -50,6 +50,7 @@ namespace LD51.Unity.Managers
             if (PlayerPrefs.HasKey("PlayerData"))
             {
                 var json = PlayerPrefs.GetString("PlayerData");
+                Debug.Log(json);
                 try
                 {
                     Player = JsonConvert.DeserializeObject<Player>(json) ?? new Player();
@@ -70,14 +71,12 @@ namespace LD51.Unity.Managers
                     Player = new Player();
                     Player.DisplayName = $"Player {Random.Range(1, 100000)}";
                     Save();
-                    Save();
                 }
             }
             else
             {
                 Player = new Player();
                 Player.DisplayName = $"Player {Random.Range(1, 100000)}";
-                Save();
                 Save();
             }
         }

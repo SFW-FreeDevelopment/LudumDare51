@@ -47,7 +47,7 @@ public class BaseRepository<T> where T : BaseResource
     {
         try
         {
-            data.Id = Guid.NewGuid().ToString();
+            data.Id ??= Guid.NewGuid().ToString();
             data.Version = 1;
             data.CreatedAt = DateTime.UtcNow;
             data.UpdatedAt = data.CreatedAt;
