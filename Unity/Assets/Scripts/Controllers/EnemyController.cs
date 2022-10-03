@@ -1,7 +1,6 @@
 ﻿using System;
 using LD51.Unity.Managers;
 using LD51.Unity.Models;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace LD51.Unity.Controllers
@@ -16,7 +15,8 @@ namespace LD51.Unity.Controllers
         public short CurrentHealth { get; private set; }
 
         [SerializeField] private Enemy _enemy;
-
+        public Enemy Enemy => _enemy;
+        
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
