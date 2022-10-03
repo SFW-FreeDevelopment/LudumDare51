@@ -16,5 +16,10 @@ namespace LD51.Unity.Models
         {
             Id = Guid.NewGuid().ToString();
         }
+        
+        public Player(string id)
+        {
+            Id = id;
+        }
     }
 }
