@@ -12,10 +12,11 @@ Move your mouse to aim and shoot the invading hordes of Halloween creatures. Sur
 ## Members
 - [@StevenGarberg](https://github.com/StevenGarberg) | Development, Sound, & Director
 - [@christopherplummer](https://github.com/christopherplummer) | Development, Dev Ops, & Project Manager
-- [@takhomasac](https://github.com/takhomasac) | Graphics & Sound
+- [@takhomasac](https://github.com/takhomasac) | Graphics
 - [@johnbrooks92](https://github.com/johnbrooks92) | Development
 - [@jortothedan](https://github.com/jortothedan) | Development
 - [@TeaffJ](https://github.com/TeaffJ) | Development & Sound
+- [@heavenkeller](https://github.com/heavenkeller) | Videography & Sound
 
 ### Supporters
 - [@reevest2](https://github.com/reevest2)
