@@ -1,5 +1,5 @@
 ﻿using LD51.Unity.Controllers;
-using Unity.Mathematics;
+using LD51.Unity.Managers;
 using UnityEngine;
 
 namespace LD51.Unity.Behaviors
@@ -10,6 +10,7 @@ namespace LD51.Unity.Behaviors
         {
             if (col.gameObject.CompareTag("Enemy"))
             {
+                AudioManager.Instance.Play("demon growl");
                 Instantiate(GameController.Instance.BloodSplatterPrefab, col.gameObject.transform.position, Quaternion.identity);
                 var movementVector = (col.gameObject.transform.position - gameObject.transform.position).normalized;
                 col.attachedRigidbody.AddForce(movementVector * 5000);

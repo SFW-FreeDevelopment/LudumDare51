@@ -11,5 +11,6 @@ namespace LD51.Unity.Models
         public ushort Health = 10;
         public byte Damage = 10;
         public float Speed = 1;
+        public string SoundName;
     }
 }

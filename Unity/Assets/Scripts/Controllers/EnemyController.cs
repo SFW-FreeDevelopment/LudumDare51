@@ -1,4 +1,5 @@
 ﻿using System;
+using LD51.Unity.Managers;
 using LD51.Unity.Models;
 using Unity.Mathematics;
 using UnityEngine;
@@ -62,7 +63,7 @@ namespace LD51.Unity.Controllers
         {
             if (col.gameObject.CompareTag("Player"))
             {
-                // TODO: Add sound fx
+                AudioManager.Instance.Play("hitHurt");
                 CinemachineShake.Instance.ShakeCamera(5f, .1f);
                 GameController.Instance.TakeDamage(_enemy.Damage);
                 Instantiate(GameController.Instance.BloodSplatterPrefab, col.gameObject.transform.position, Quaternion.identity);

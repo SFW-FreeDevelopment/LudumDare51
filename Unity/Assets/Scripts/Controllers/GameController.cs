@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using LD51.Unity.Managers;
 using LD51.Unity.Scene;
 using TMPro;
 using Unity.Mathematics;
@@ -72,6 +73,17 @@ namespace LD51.Unity.Controllers
 
         private void GameOver()
         {
+            AudioManager.Instance.Play("explosion");
+            var soundRng = Random.Range(0, 3);
+            var soundName = soundRng switch
+            {
+                0 => "devil laugh",
+                1 => "witch laugh",
+                2 => "ghost laugh",
+                _ => "devil laugh"
+            };
+            AudioManager.Instance.Play(soundName);
+            
             PlayerController.Instance.Die();
             
             _finalScoreText.text = $"<b>Score:</b> {Score}";
@@ -100,6 +112,11 @@ namespace LD51.Unity.Controllers
         {
             while (true)
             {
+                if (TimeElapsed != 0 && TimeElapsed % 60 == 0)
+                {
+                    AudioManager.Instance.Play("demon speak");
+                }
+                
                 Spawn();
                 for (var i = 0; i < TimeElapsed / TimeBetweenWaves; i++)
                 {
